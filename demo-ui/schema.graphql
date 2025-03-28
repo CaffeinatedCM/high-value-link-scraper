@@ -1,0 +1,71 @@
+schema {
+  query: Query
+  mutation: Mutation
+}
+
+input CreateScrapeJobInput {
+  keywords: [String!]!
+  maxDepth: Int = 1
+  minRelevance: Float = 0.5
+  targetUrl: String!
+}
+
+type CreateScrapeJobPayload {
+  job: ScrapeJob!
+}
+
+"""
+A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
+"""
+scalar DateTime
+
+type Mutation {
+  createScrapeJob(input: CreateScrapeJobInput!): CreateScrapeJobPayload
+}
+
+type Query {
+  scrapeJob(id: Int!): ScrapeJob
+  scrapeJobs: [ScrapeJob!]!
+}
+
+type ScrapeJob {
+  createdAt: DateTime!
+  id: ID!
+  keywords: [String!]!
+  maxDepth: Int!
+  minRelevance: Float!
+  scrapedContacts(limit: Int): [ScrapedContact!]
+  scrapedUrls(limit: Int): [ScrapedUrl!]
+  status: ScrapeJobStatus!
+  targetUrl: String!
+  updatedAt: DateTime!
+}
+
+enum ScrapeJobStatus {
+  DONE
+  PENDING
+  RUNNING
+}
+
+type ScrapedContact {
+  contactName: String!
+  contactRole: String
+  emailAddress: String
+  keywords: [String!]
+  phoneNumber: String
+  physicalAddress: String
+  relevanceReason: String!
+  relevanceScore: Float!
+}
+
+type ScrapedUrl {
+  absoluteUrl: String!
+  context: String
+  fileType: String
+  htmlTag: String!
+  isDownload: Boolean!
+  keywords: [String!]
+  linkText: String!
+  relevanceReason: String!
+  relevanceScore: Float!
+}
