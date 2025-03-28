@@ -24,7 +24,7 @@
 3. An API Playground can be used at http://localhost:3000/graphql in a browser
 
 ## Usage (UI)
-- The `demo-ui` is accessible by default on port 3001, next will assign a different port if that port is occupied. 
+- The `demo-ui` is accessible by default on port 3001, (http://localhost:3001) next will assign a different port if that port is occupied. 
 - There should be a pre-populated list of jobs to view, and a create job form to create your own jobs.
 
 ## API Docs
