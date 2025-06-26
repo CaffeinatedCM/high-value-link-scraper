@@ -1,6 +1,8 @@
 # AI Link Scraper
 
-## Preqrequisits
+> **Note:** This project was created as a coding assessment for a job interview and developed within a limited timeframe. While fully functional, some features and optimizations may be simplified or abbreviated due to time constraints.
+
+## Prerequisites
 - node 22+
 - pnpm  (`npm i -g pnpm`)
 - OpenAI API Key
