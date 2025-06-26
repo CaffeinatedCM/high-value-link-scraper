@@ -1,0 +1,16 @@
+{
+  "name": "ai-link-scraper-monorepo",
+  "private": true,
+  "version": "1.0.0",
+  "workspaces": [
+    "api-server",
+    "demo-ui",
+    "stagehand-scraper"
+  ],
+  "scripts": {
+    "dev": "concurrently -k -n api,ui -c green,blue \"pnpm --dir api-server run dev\" \"pnpm --dir demo-ui run dev\""
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.0"
+  }
+}

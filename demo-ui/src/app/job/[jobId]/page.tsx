@@ -24,6 +24,7 @@ import {
 } from "@/components/ui/tooltip";
 import { AutoRefresh } from "@/components/AutoRefresh";
 import { Checkbox } from "@/components/ui/checkbox";
+import { ScrapeJobStatus } from "@/graphql/graphql";
 
 interface JobDetailsProps {
   params: Promise<{
@@ -103,7 +104,10 @@ export default async function JobDetails({ params }: JobDetailsProps) {
           <h1 className="text-2xl font-bold">Job Details</h1>
         </div>
         {/* Ideally I'd save their preference for refresh or not, but... time */}
-        <AutoRefresh interval={90} initialEnabled={true} />
+        <AutoRefresh
+          interval={90}
+          initialEnabled={status !== ScrapeJobStatus.Done}
+        />
       </div>
       <Card className="mb-6">
         <CardHeader className="pb-2">

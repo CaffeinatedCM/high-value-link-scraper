@@ -1,0 +1,14 @@
+packages:
+  - api-server
+  - demo-ui
+  - stagehand-scraper
+onlyBuiltDependencies:
+  - '@apollo/protobufjs'
+  - '@nestjs/core'
+  - '@parcel/watcher'
+  - '@swc/core'
+  - '@tailwindcss/oxide'
+  - esbuild
+  - sharp
+  - sqlite3
+  - unrs-resolver

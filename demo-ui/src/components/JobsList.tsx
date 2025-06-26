@@ -3,7 +3,6 @@
 import { graphql } from "@/graphql";
 import { useQuery } from "@tanstack/react-query";
 import { gqlClient } from "@/lib/gqlClient";
-import request from "graphql-request";
 import { LoaderCircle } from "lucide-react";
 import { JobsAccordion } from "./JobsAccordion";
 
@@ -46,8 +45,6 @@ export const JobsList = () => {
     queryFn: async () => gqlClient.request(allJobsQueryDocument),
     refetchInterval: 90,
   });
-
-  console.log("data", data);
 
   return (
     <div className="space-y-2 mt-6">

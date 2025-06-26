@@ -14,11 +14,9 @@
 
 ## Running
 
-1. Run `bootstrap.sh`  OR run `pnpm install` in `api-server/` , `demo-ui/`, and `stagehand-scraper/`  (you may need to run `pnpm accept-builds` if manually running pnpm install)
+1. Run `pnpm install` and  `pnpm accept-builds` 
 2. Set up the `.env` file in `api-server/` , see `api-server/env.example` , only `OPENAI_API_KEY` is required
-3. Start `api-server` with `pnpm run start` or `pnpm run start:dev` in `api-server/` (uses port 3000)
-   - If you just want the API, then you can stop here
-4. (Optional) Run `demo-ui` with `pnpm dev` (uses port 3001)
+3. Run `pnpm dev` to start the server and ui
 
 ## Usage (API)
 1. `api-server` is available on port 3000 (http://localhost:3000)
